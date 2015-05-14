@@ -1,0 +1,116 @@
+<dtml-comment >  
+<!-- version : $Revision: 1.7 $  
+     author  : KANDA Hiroshi   
+       
+  
+     copyright (c) 2002 by KANDA Hiroshi  
+  
+     see License.txt for restrictions on distribution, use   
+     and modifications.  
+  
+  -->  
+</dtml-comment>  
+<HTML>  
+<HEAD>  
+<TITLE>Add Zch Site</TITLE>  
+</HEAD>  
+<BODY BGCOLOR="#FFFFFF" LINK="#000099" VLINK="#555555">  
+<H2>Add Zch Site</H2>  
+<P>  
+<FORM ACTION="./manage_addZch"  
+      METHOD="POST" TARGET="manage_main">  
+<TABLE CELLSPACING="2">  
+<TR>  
+  <TD ALIGN="LEFT" VALIGN="TOP">  
+  <STRONG>Id</STRONG>  
+  </TD>  
+  <TD ALIGN="LEFT" VALIGN="TOP">  
+  <INPUT TYPE="TEXT" NAME="id" SIZE="40">  
+  </TD>  
+</TR>  
+<TR>  
+  <TD ALIGN="LEFT" VALIGN="TOP">  
+  <EM><STRONG>Title</STRONG></EM>  
+  </TD>  
+  <TD ALIGN="LEFT" VALIGN="TOP">  
+  <INPUT TYPE="TEXT" NAME="title" SIZE="40"></TD>  
+</TR>  
+<TR>  
+  <TD ALIGN="LEFT" VALIGN="TOP">  
+  <EM><STRONG>Skelton</STRONG></EM>  
+  </TD>  
+  <TD ALIGN="LEFT" VALIGN="TOP">  
+  <select name="skelton">
+  <dtml-in name="list_skelton">
+      <option<dtml-if "_['sequence-item']=='zch'"> selected</dtml-if>>&dtml-sequence-item;</option>
+  </dtml-in>
+  </select>
+  
+  </TD>  
+</TR>  
+<TR>  
+  <TD></TD>  
+  <TD ALIGN="LEFT" VALIGN="TOP">  
+  <INPUT TYPE="CHECKBOX" NAME="fileattache:int" VALUE="1"> 
+  File attache.
+  </TD>  
+</TR>  
+
+  <tr>
+    <td align="left" valign="top" colspan="2">
+      <hr width="80%">
+    </td>
+  </tr>
+
+   <tr>
+    <td align="left" valign="top">
+      <div class="form-label">Create ZCTextIndex for serch</div>
+    </td>
+    <td align="left" valign="top">
+      <input type="checkbox" name="createlexicon" checked />
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top" colspan="2">
+      <h3>ZCTextIndex Lexicon</h3>
+    </td>
+  </tr>
+  <dtml-in name="getElementGroups" prefix="group">
+    <dtml-let elements="getElementNames(group_item)">
+      <tr>
+        <td align="left" valign="top">
+          <div class="form-label">&dtml-group_item;</div>
+        </td>
+        <td align="left" valign="top">
+          <input type="hidden" name="elements.group:records"
+                 value="&dtml-group_item;" />
+          <dtml-if expr="_.len(elements) > 1">
+            <select name="elements.name:records">
+              <dtml-in name="elements">
+                <option value="&dtml-sequence-item;"
+                >&dtml-sequence-item;</option>
+              </dtml-in>
+            </select>
+          <dtml-else>
+            <input type="checkbox" name="elements.name:records"
+                   value="<dtml-var expr="elements[0]" html_quote>" checked />
+          </dtml-if>
+        </td>
+      </tr>
+    </dtml-let>
+  </dtml-in>
+
+<TR>  
+  <TD></TD>  
+  <TD>  
+  <INPUT TYPE="HIDDEN" NAME="default_doc:string" VALUE="demo2">  
+  <BR><INPUT TYPE="SUBMIT" VALUE=" Add ">  
+  </TD>  
+</TR>  
+</TABLE>  
+</FORM>  
+</BODY>  
+</HTML>  
+  
+  
+  

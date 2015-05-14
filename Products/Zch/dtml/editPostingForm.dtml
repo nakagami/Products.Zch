@@ -1,0 +1,86 @@
+<dtml-comment >  
+<!-- version : $Revision: 1.9 $  
+     author  : KANDA Hiroshi   
+       
+  
+     copyright (c) 2002 by KANDA Hiroshi  
+  
+     see License.txt for restrictions on distribution, use   
+     and modifications.  
+  
+  -->  
+</dtml-comment>  
+<dtml-var manage_page_header>
+<dtml-var manage_tabs>  
+Edit this message using the form below.       
+       
+<FORM ACTION="." ENCTYPE="multipart/form-data" METHOD="POST">       
+<TABLE CELLSPACING="2">       
+<TR>       
+  <TD ALIGN="LEFT" VALIGN="TOP">       
+  <STRONG>Title</STRONG>       
+  </TD>       
+  <TD ALIGN="LEFT" VALIGN="TOP">       
+  <INPUT TYPE="TEXT" NAME="title" VALUE="<dtml-var title html_quote>" SIZE="40">
+  </TD>       
+</TR>       
+
+<TR>       
+  <TD ALIGN="LEFT" VALIGN="TOP">       
+  <STRONG>Author</STRONG>       
+  </TD>       
+  <TD ALIGN="LEFT" VALIGN="TOP">       
+  <INPUT TYPE="TEXT" NAME="author" VALUE="<dtml-var author html_quote>" SIZE="40">       
+  </TD>       
+</TR>       
+
+<TR>       
+  <TD ALIGN="LEFT" VALIGN="TOP">       
+  <EM><STRONG>Email</STRONG></EM>       
+  </TD>       
+  <TD ALIGN="LEFT" VALIGN="TOP">       
+  <INPUT TYPE="TEXT" NAME="email" VALUE="<dtml-var email html_quote>" SIZE="40">       
+  </TD>       
+</TR>       
+
+<TR>       
+  <TD ALIGN="LEFT" VALIGN="TOP"><STRONG>Text</STRONG>       
+  </TD>       
+  <TD ALIGN="LEFT" VALIGN="TOP">       
+<TEXTAREA NAME="body" WRAP ROWS="14" COLS="50"><dtml-var body null=""></TEXTAREA>       
+  </TD>       
+</TR>       
+<dtml-if attachment>       
+<TR>       
+<TD ALIGN="LEFT" VALIGN="TOP"><STRONG>Attachment</STRONG></TD>       
+<TD>       
+<dtml-in attachment>       
+<A HREF="&dtml-absolute_url;/<dtml-var file_name url_quote>">       
+<IMG SRC="&dtml-site_url;/<dtml-var icon url_quote>" HEIGHT="16       
+ WIDTH="16" BORDER="0" ALT="Click to download attachment"></A>         
+<A HREF="&dtml-absolute_url;/<dtml-var file_name url_quote>"><dtml-var file_name></A><BR>        
+<dtml-var file_kbytes>KB (<dtml-var file_bytes> bytes)<BR>  
+</dtml-in attachment>
+</TD>
+</TR>       
+<TR>
+<TD></TD>
+<TD><INPUT TYPE="CHECKBOX" NAME="delete_attachment"> Delete attachment and replace with: <INPUT TYPE="FILE" NAME="new_attachment"></TD>
+</TR>
+<dtml-else>
+<TR>
+<TD></TD>
+<TD>Add attachment: <INPUT TYPE="FILE" NAME="new_attachment"></TD>
+</TR>
+</dtml-if>       
+       
+</TR>       
+<TR>       
+<TD></TD>       
+<TD>
+	<INPUT TYPE="SUBMIT" NAME="edit:method" VALUE="Change"> 
+</TD>       
+</TR>       
+</TABLE>       
+</FORM>       
+<dtml-var manage_page_footer>

@@ -1,0 +1,17 @@
+<dtml-comment >  
+<!-- version : $Revision: 1.2 $  
+     author  : KANDA Hiroshi   
+       
+  
+     copyright (c) 2002 by KANDA Hiroshi  
+  
+     see License.txt for restrictions on distribution, use   
+     and modifications.  
+  
+  -->  
+</dtml-comment >  
+<HTML>  
+<HEAD>
+<META http-equiv="content-type" content="text/html; charset=euc-jp">
+<TITLE><dtml-var SITE_TITLE></TITLE></HEAD>  
+<BODY background="<dtml-var site_url>/ba_gif">

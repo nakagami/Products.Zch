@@ -1,0 +1,25 @@
+<dtml-comment >  
+<!-- version : $Revision: 1.1 $  
+     author  : KANDA Hiroshi   
+       
+  
+     copyright (c) 2002 by KANDA Hiroshi  
+  
+     see License.txt for restrictions on distribution, use   
+     and modifications.  
+  
+  -->  
+</dtml-comment >  
+<HTML>
+<HEAD>
+<META http-equiv="content-type" content="text/html; charset=euc-jp">
+<TITLE><dtml-var SITE_TITLE></TITLE></HEAD> 
+<body bgcolor=<dtml-var THREAD_COLOR> text=<dtml-var TEXT_COLOR> link=<dtml-var LINK_COLOR> alink=<dtml-var ALINK_COLOR> vlink=<dtml-var VLINK_COLOR>>
+<font size=2>
+<dtml-in article_list>
+<a href="&dtml-absolute_url;" target="body"><dtml-var sequence-number>:<dtml-var title> (<dtml-var expr="len(_['sequence-item'])">)</a>　
+</dtml-in article_list>
+</font>
+<br><br>
+</BODY>
+</HTML>

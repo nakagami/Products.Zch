@@ -1,0 +1,55 @@
+<dtml-comment >  
+<!-- version : $Revision: 1.1 $  
+     author  : KANDA Hiroshi   
+       
+  
+     copyright (c) 2002 by KANDA Hiroshi  
+  
+     see License.txt for restrictions on distribution, use   
+     and modifications.  
+  
+  -->  
+</dtml-comment >  
+<dtml-var site_header>  
+<TABLE width="99%" align=center cellpadding=5 cellspacing=0   
+  border=0 bgcolor="#ffffff">  
+	<TR>  
+		<TD valign=top align=left><FONT color="#000000"><TABLE   
+		    width="99%" cellpadding=0 cellspacing=0 border=0>  
+			<TR>  
+				<TD valign=top bgcolor="#0066cc"><dtml-if 1><IMG src="roundedge_gif"   
+    				 width=13 height=16 alt="" align=top><dtml-else>&nbsp;&nbsp;</dtml-if><FONT size=4   
+	 				 color="#ffffff" face="arial,helvetica"><B>Search <dtml-var SITE_TITLE></B></FONT></TD>  
+			<dtml-if 1>  
+				<TD valign=bottom width=4><IMG align=bottom src="Images/rtshadow_img" width=4 height=18 alt=""></TD>  
+				</TR>  
+			<TR>  
+				<TD background="botshadow_gif"><IMG src="botshadow_gif" width="1" height=4 alt=""></TD>  
+				<TD width=4><IMG src="botshadow_gif" width=4 alt="" height=4></TD>   
+			</dtml-if>  
+				</TR>  
+			</TABLE>  
+			<dtml-if has_items>  
+			<FORM ACTION="./search" METHOD="POST">  
+			<P><FONT color="#0066cc"><B>本文</B></FONT> (Optional)<BR>  
+			<INPUT TYPE="TEXT" NAME="body" VALUE="<dtml-if search_body><--#var search_body html_quote--></dtml-if>" SIZE=50><BR>  
+			<FONT SIZE=2> Put in a word or a phrase that will be matched in the body</FONT>  
+			<P>  
+			<INPUT TYPE=RADIO NAME="op" VALUE="articles" <dtml-if search_op>CHECKED</dtml-if>> Search articles only <INPUT TYPE=RADIO NAME="op" VALUE="comments" <dtml-unless search_op>CHECKED</dtml-unless>> Search both articles and replies<BR>  
+			<FONT SIZE=2> Limit search to main posts or include replies </FONT>  
+			<P>  
+			<INPUT TYPE="SUBMIT" VALUE="Search">  
+			<P><FONT color="#0066cc"><B>タイトル</B></FONT> (Optional)<BR>   
+			<INPUT NAME="title" TYPE="TEXT" SIZE="50" VALUE="<dtml-if search_title><dtml-var search_title html_quote></dtml-if>"><BR>  
+			<FONT SIZE=2> Put in a word or a phrase that will be matched in the article or comment title</FONT>  
+			<P><FONT color="#0066cc"><B>名前</B></FONT> (Optional)<BR>   
+			<INPUT NAME="author" TYPE="TEXT" SIZE="50" VALUE="<dtml-if search_author><dtml-var search_author html_quote></dtml-if>"><BR>  
+			<FONT SIZE=2> Put in an author's name that will be matched in the article or comment title (Exact match)</FONT>  
+			<dtml-else>  
+			<EM>There are currently no messages to search.</EM>  
+			</dtml-if has_items><P>  
+			</FORM></FONT>  
+			</TD>  
+		</TR>  
+	</TABLE>  
+<dtml-var site_footer>

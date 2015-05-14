@@ -1,0 +1,40 @@
+#title:string - title
+#TITLE_PICTURE:string - 掲示板Image
+#SITE_TITLE:string - 掲示板名称
+#TEXT_COLOR:string - 文字font color
+#NAME_COLOR:string - 名前font color
+#LINK_COLOR:string - link color
+#ALINK_COLOR:string - alink color
+#VLINK_COLOR:string - vlink color
+#MENU_COLOR:string - メニュー背景 color
+#THREAD_COLOR:string - スレッド背景 color
+#MAKETHREAD_COLOR:string - 新規スレッド背景 color
+#NONAME_NAME:string - ななしさんの名前
+#DISP_IP:boolean - IPの表示有無
+#THREAD_NUMBER:int - メイン画面で表示するスレッド数
+#CONTENTS_NUMBER:int - メイン画面で表示するスレッドのレス数
+#MENU_THREAD_NUMBER:int - メイン画面のスレッド一覧で表示するスレッド数
+#rss_title:string - rssのタイトル
+#rss_description:string - rssの説明
+#rss_image_url:string - rssの画像ファイル
+#
+TITLE_PICTURE:string=Zch_gif
+SITE_TITLE:string=Ｚちゃんねる
+TEXT_COLOR:string=#000000
+NAME_COLOR:string=forestgreen
+LINK_COLOR:string=#0000FF
+ALINK_COLOR:string=#FF0000
+VLINK_COLOR:string=#660099
+MENU_COLOR:string=#6699CC
+THREAD_COLOR:string=#EFEFEF
+MAKETHREAD_COLOR:string=#6699CC
+NONAME_NAME:string=名無しさん＠ぞぺ使ってる
+DISP_IP:boolean=1
+THREAD_NUMBER:int=5
+CONTENTS_NUMBER:int=10
+MENU_THREAD_NUMBER:int=10
+rss_description:string=Zch: 
+rss_title:string=Ｚちゃんねる
+rss_image_url:string=Zch_gif
+management_page_charset:string=utf-8
+

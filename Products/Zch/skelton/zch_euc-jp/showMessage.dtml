@@ -1,0 +1,13 @@
+<dtml-comment >  
+<!-- version : $Revision: 1.1 $  
+     author  : KANDA Hiroshi   
+       
+  
+     copyright (c) 2002 by KANDA Hiroshi  
+  
+     see License.txt for restrictions on distribution, use   
+     and modifications.  
+  
+  -->  
+</dtml-comment >  
+<dtml-call "RESPONSE.redirect(FROMURL)">

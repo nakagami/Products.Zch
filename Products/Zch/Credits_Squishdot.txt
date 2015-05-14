@@ -1,0 +1,144 @@
+Credits :  
+  
+ver. 0.1.0  
+  
+   -- Digital Creations (http://www.digicool.org)  -- original Confera code  
+   -- Butch Landingin (butchland@yahoo.com)  -- original author and current maintainer  
+   -- Jeremy Pena (jeremypena@yahoo.com) -- code fixes, html updates  
+   -- John de la Paz (johndelapaz@yahoo.com) -- gif updates (animation, squishdot logo, topic images)  
+   -- Rob Malda (malda@slashdot.org) -- Slashdot (slashdot.org) look and feel ideas, navigation,  gen. inspiration etc.  
+  
+ver. 0.1.1  
+  
+   -- Butch Landingin -- bug fixes  
+ 
+ver. 0.1.2 
+ 
+   -- Butch Landingin -- bug fixes 
+ 
+ver. 0.1.3 
+ 
+   -- Butch Landingin -- various bug fixes 
+ 
+ver. 0.1.4 
+ 
+   -- Butch Landingin -- bug fix 
+ 
+ver. 0.1.5  
+ 
+   -- Butch Landingin -- bug fix 
+ 
+ver. 0.3.0  
+ 
+   -- Butch Landingin -- preview panels, bug fixes, updates, additional  
+      features, squishdot logo, testing 
+   -- Bruce Perens, Avvus, others -- rdf/rss page 
+   -- A.M.Kuchling, others -- "re" fixes  
+   -- M. Bernstein -- t.y. for maintaining the site during my absences 
+   -- others too numerous to mention -- for bug reports, egooboo messages, suggestions,  
+      patches, etc.  
+   -- Lalo Martins, date_posted fix
+   -- pesky ACs (and non-ACs as well) who keep reminding me to get on my butt  
+      and finish this thing ;^)...
+
+ver. 0.3.1
+
+   -- Butch Landingin -- bug fixes
+   -- Lalo Martins, date posted patch
+
+ver. 0.3.2
+
+   -- Butch Landingin -- bugfix
+
+ver. 0.3.3a1
+
+   -- Butch Landingin -- bugfix
+   -- Scott Kaplan -- bugfix
+ 
+ver. 0.3.4
+
+   -- Chris Withers -- bug fixes 
+ 
+ver. 0.4.0
+
+   -- Chris Withers -- bug fixes and ZCatalog Indexing.
+     
+ver. 0.4.1
+
+   -- Chris Withers -- bug fixes and new functionality.  
+
+ver. 0.5.0
+
+   -- Chris Withers -- bug fixes and new functionality
+   -- John Glossner for the patch that enabled preview when editing postings in the management interface
+   -- Wilbert Yuque for finding the KeyError in the Plain Demo
+   -- Dan Pierson and Lance for their help in making Squishdot adhere to the ZSearch interface and behave more like a ZCatalog
+   -- Steve Alexander for helping me track down the CRLF bug.
+
+ver. 0.6.0
+
+   -- Chris Withers -- new functionality
+   -- Bruce Perens -- batch moderation patch
+   -- Martijn Pieters -- management interface taming ;-)
+
+ver. 0.7.0
+
+   -- Chris Withers -- grunt work of checking everything was the way it should be ;-)
+   -- Lance -- patches for some of the Zope 2.2 compatability problems.
+   -- Shane Hathaway -- help with some really confusing tracebacks.
+
+ver. 0.7.1
+
+   -- Ulrich Schreiner -- patch to fix deletion of postings bug.
+
+ver. 0.7.2
+
+   -- Chris Withers -- implementation of INSTANCE_HOME compatability
+   -- Evan Simpson -- information about package_home()
+
+ver. 0.7.3
+   
+   -- Chris Withers -- bug fixes.
+   -- Fred Yankowski -- for point out bad url quoting.
+   -- Philip Tellis -- patch to fix TinyTable detection.
+
+ver. 0.8.0
+
+   -- Chris Withers -- bug fixes.
+   -- Tres Seaver -- pointers for solving the KeyError on Re-Catalog All Postings problem
+
+ver. 1.0.0
+   
+   -- Chris Withers -- bug fixes and new features.
+   -- Itamar Shtull-Trauring -- parser to strip harmful HTML and close unclosed tags
+   -- unknown@anonymous.openface.ca -- Fixed problem with permissions for editing postings
+
+ver. 1.1.0
+   
+   -- Chris Withers -- bug fixes and new features.
+   -- Mike Renfo -- Finding a bug in the postingPreview method.
+   -- Andy McKay -- Strip-o-Gram testing.
+
+ver. 1.2.0
+   
+   -- Chris Withers -- bug fixes.
+   -- Guido van Rossum and Fred Drake -- Kick ass HTML parser :-)
+   -- J M Cerqueira Esteves -- Strip-o-Gram testing.
+   -- Emmanuel Viennet -- reproducing posting count bug.
+
+ver. 1.2.1
+   
+   -- Chris Withers -- bug fixes
+   -- Raymond Penners -- patch to enable editing of Posting subjects
+
+ver. 1.3.0
+   
+   -- Chris Withers -- bug fixes & refactoring
+
+ver. 1.4.0
+   
+   -- Chris Withers -- bug fixes, refactoring & optimisations
+   -- Michael Bernsteing -- analysis of desc_items bug
+   -- Adam Warner -- patch for bug in plain demo previewPosting method
+   -- Rob Bickers -- noticed STX tag problem
+   -- Nicola Larosa -- fixes for various small bugs
