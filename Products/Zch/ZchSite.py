@@ -28,6 +28,7 @@ from OFS.Document import Document
 from OFS.ObjectManager import REPLACEABLE
 from Products.ZCatalog import ZCatalog
 from Products.PythonScripts.PythonScript import manage_addPythonScript
+from Products.PageTemplates.PageTemplate import manage_addPageTemplate
 
 from ZchPermissions import ManageZch,AddArticleZch,AddCommentZch,View
 from Article import Article
@@ -123,14 +124,17 @@ class ZchSite(ZCatalog.ZCatalog):
 
     security.declareProtected(ManageZch, 'loadSkelton')
     def loadSkelton(self, REQUEST, skelton='zch'):
-        "Add PythonScript, DTMLMethod and Image read from skelton directory."
+        "Add Page Template PythonScript, DTMLMethod and Image read from skelton directory."
         for entry in os.listdir(os.path.join(package_home(globals()), 'skelton', skelton)):
-            if entry[-3:]=='.py' or entry[-5:]=='.dtml' or entry[-4:]=='.gif':
+            if entry[-3:] = '.pt' or entry[-3:]=='.py' or entry[-5:]=='.dtml' or entry[-4:]=='.gif':
                 f=open(os.path.join(package_home(globals()), 'skelton', skelton, entry), 'rb') 
                 file=f.read()     
                 f.close()     
                 try:
-                    if entry[-3:] == '.py':
+                    if entry[-3:] == '.pt':
+                        id = entry[:-3]
+                        manage_addPageTemplate(self.id, text=file, encoding='utf-8')
+                    elif entry[-3:] == '.py':
                         id = entry[:-3]
                         manage_addPythonScript(self,id)
                         self._getOb(id).write(file)
