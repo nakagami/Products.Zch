@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title tal:content="template/title">The title</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  </head>
+  <body background="ba_gif">
+
+<div align=center><IMG  tal:attributes="src here/TITLE_PICTURE" border=0 alt="Welcome to Zch"></div>
+<br>
+<table width=95% tal:attributes="bgcolor here/MENU_COLOR" align=center style="border-collapse:cllapse;border:1px #666666 solid;"><tr><td align=center>
+<TABLE BORDER=0 CELLPADDING=1 WIDTH=100%>
+<TR><TD nowrap COLSPAN=2><font size=+1><b>Zope＠Zch掲示板</b></font><br></TD>
+<TD nowrap width=5% ALIGN=right VALIGN=top><a href=#menu>■</a> <a href=#1>▼</a></TD></TR><TR><TD COLSPAN=3>
+<p>
+<a href="http://www.zope.org">Zope</a>や<a href="http://plone.org/">Plone</a>関連の話題を扱っています。<br>
+<a href="http://docs.zope.org/zope2/zope2book/ZPT.html">Zope Page Template</a>等の Zope の周辺のテーマも扱っています<br>
+検索は<a href="searchForm">こちら</a>から</p>
+
+</TD></TR></TABLE></td></tr></table><br>
+
+<input tal:attributes="value here/NONAME_NAME" type="text" />
+    This is Page Template <em tal:content="template/id">template id</em>.
+  </body>
+</html>
