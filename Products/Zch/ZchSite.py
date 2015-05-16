@@ -126,7 +126,7 @@ class ZchSite(ZCatalog.ZCatalog):
     def loadSkelton(self, REQUEST, skelton='zch'):
         "Add Page Template PythonScript, DTMLMethod and Image read from skelton directory."
         for entry in os.listdir(os.path.join(package_home(globals()), 'skelton', skelton)):
-            if entry[-3:] = '.pt' or entry[-3:]=='.py' or entry[-5:]=='.dtml' or entry[-4:]=='.gif':
+            if entry[-3:] == '.pt' or entry[-3:]=='.py' or entry[-5:]=='.dtml' or entry[-4:]=='.gif':
                 f=open(os.path.join(package_home(globals()), 'skelton', skelton, entry), 'rb') 
                 file=f.read()     
                 f.close()     
