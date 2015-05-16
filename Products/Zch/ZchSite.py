@@ -28,7 +28,7 @@ from OFS.Document import Document
 from OFS.ObjectManager import REPLACEABLE
 from Products.ZCatalog import ZCatalog
 from Products.PythonScripts.PythonScript import manage_addPythonScript
-from Products.PageTemplates.PageTemplate import manage_addPageTemplate
+from Products.PageTemplates.ZopePageTemplate import manage_addPageTemplate
 
 from ZchPermissions import ManageZch,AddArticleZch,AddCommentZch,View
 from Article import Article
