@@ -1,2 +1,2 @@
 include README.rst
-recursive-include Products *.gif *.dtml properties
+recursive-include Products *.gif *.dtml *.py properties
