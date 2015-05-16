@@ -36,5 +36,4 @@ MENU_THREAD_NUMBER:int=10
 rss_description:string=Zch: 
 rss_title:string=Ｚちゃんねる
 rss_image_url:string=Zch_gif
-management_page_charset:string=utf-8
 
