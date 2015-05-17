@@ -53,9 +53,8 @@
 </dtml-in attachment>
 </dtml-if>
 <br>
-<!-- thread main end -->
 
-<!-- thread res main -->
+<!-- thread res -->
 <dtml-in expr="comment_list_size(0,CONTENTS_NUMBER)">
 <dt><dtml-var tnum> 名前：<font color=<dtml-var NAME_COLOR>><b><dtml-if "email!=''"><A href="mailto:<dtml-var email html_quote>"></dtml-if><dtml-var author><dtml-if "email!=''"></A></dtml-if>
 </b></font> 投稿日：<dtml-var date_posted><dtml-if DISP_IP> ID：<dtml-if "email!=''">???<dtml-else><dtml-var "ipcrypt(remote_addr,_['date_posted'])"></dtml-if></dtml-if>
@@ -72,6 +71,7 @@
 </dtml-if>
 <br>
 </dtml-in>
+<!-- thread res end -->
 
 <dt><dd>
 <FORM ACTION="&dtml-absolute_url;" ENCTYPE="multipart/form-data" METHOD="POST">
@@ -92,6 +92,8 @@ E-mail<font size="1">（省略可）</font>：<INPUT TYPE=text NAME="email" VALU
 </b></DL></td></tr></table><br>
 
 </dtml-in article_list>
+
+<!-- thread main end -->
 
 <table cellpadding=3 width=95% bgcolor=<dtml-var MENU_COLOR> align=center style="border:1px #666666 solid;"><tr><td>
 <br><form method=POST action="addPostingForm"><input type=submit value="新規スレッド作成画面へ" name=submit style="background-color:#CCCCCC; border:1px #666666 solid;"></TD></TR></TABLE></form>
