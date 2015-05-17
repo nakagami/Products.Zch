@@ -265,25 +265,18 @@ class ZchSite(ZCatalog.ZCatalog):
         return result
     
     security.declareProtected(View, 'article_list')
-    def article_list(self):     
+    def article_list(self, size=None):
         """ returns article items  """                          
         def cmp_by_modified(x, y):
           return cmp(y.modified, x.modified)
         items = self.data_map(self.ids)
         items.sort(cmp_by_modified)
-        return items
-
-    security.declareProtected(View, 'article_list')
-    def articleList(self, size):     
-        """ returns article items  """                          
-        def cmp_by_modified(x, y):
-          return cmp(y.modified, x.modified)
-        items = self.data_map(self.ids)
-        items.sort(cmp_by_modified)
-        items = items[:size]
+        if size:
+            items = items[:size]
         for i in range(len(items)):
             items[i].sequence_number = i + 1
-            items[i].item_name = str(i) + ':' + items[i].title
+            items[i].sn_title = str(i+1) + ':'
+            items[i].title_count = items[i].title
         return items
 
     security.declareProtected(ManageZch, 'postingValues')
