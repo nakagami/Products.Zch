@@ -22,16 +22,13 @@
 
 <!-- thread menu -->
 <a name="menu"></a>
-<table cellpadding=3 width=95% bgcolor=<dtml-var MENU_COLOR> align=center style="border:1px #666666 solid;">
+<table cellpadding=3 width=95% tal:attributes="bgcolor here/MENU_COLOR align=center style="border:1px #666666 solid;">
 <tr>
 <td><font size=2>
-    <dtml-in article_list size=MENU_THREAD_NUMBER>
-      <dtml-if expr="_['sequence-number'] > THREAD_NUMBER">
-        <a href="&dtml-absolute_url;" target="body"><dtml-var sequence-number>:<dtml-var title html_quote> (<dtml-var expr="len(_['sequence-item'])">)</a>　
-      <dtml-else>
-        <a href="&dtml-absolute_url;" target="body"><dtml-var sequence-number>:</a> <a href="#<dtml-var sequence-number>"><dtml-var title html_quote> (<dtml-var expr="len(_['sequence-item'])">)</a>　
-      </dtml-if>
-    </dtml-in article_list>
+    <span tal:repeat="item python: context.articleList(context.MENU_THREAD_NUMBER)">
+        <a href="#" target="body" tal:content="item/item_name"></a>
+    </span>
+
     <div align="right"><a href="subback_html"><b>スレッド一覧はこちら</b></a></div>
 </font></td></tr></table><br>
 <!-- thread menu end -->
