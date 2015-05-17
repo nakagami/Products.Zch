@@ -133,7 +133,7 @@ class ZchSite(ZCatalog.ZCatalog):
                 try:
                     if entry[-3:] == '.pt':
                         id = entry[:-3]
-                        manage_addPageTemplate(id, '', file, encoding='utf-8')
+                        manage_addPageTemplate(self, id, '', file, encoding='utf-8')
                     elif entry[-4:] == '.pys':
                         id = entry[:-4]
                         manage_addPythonScript(self,id)
