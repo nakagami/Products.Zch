@@ -34,7 +34,7 @@
 <!-- thread menu end -->
 
 <!-- thread main -->
-<dtml-in article_list size=THREAD_NUMBER>
+<span tal:repeat="item python: context.article_list(context.THREAD_NUMBER)">
 <TABLE cellpadding=3 width=95% bgcolor=<dtml-var THREAD_COLOR> align=center style="border:1px #666666 solid;"><TR><TD><DL>
 <dtml-call "REQUEST.set('seq',_['sequence-number'])">
 <a name="<dtml-var seq>"></a><DIV ALIGN="right"><a href ="#menu">■</a><a href="#<dtml-var expr="seq - 1">">▲</a><a href="#<dtml-var expr="seq + 1">">▼</a></DIV>
@@ -91,11 +91,11 @@ E-mail<font size="1">（省略可）</font>：<INPUT TYPE=text NAME="email" VALU
 <a href="#top">板のトップへ</a> <a href="?">リロード</a>
 </b></DL></td></tr></table><br>
 
-</dtml-in article_list>
+</span>
 
 <!-- thread main end -->
 
-<table cellpadding=3 width=95% bgcolor=<dtml-var MENU_COLOR> align=center style="border:1px #666666 solid;"><tr><td>
+<table cellpadding=3 width=95% tal:attributes="bgcolor here/MENU_COLOR" align=center style="border:1px #666666 solid;"><tr><td>
 <br><form method=POST action="addPostingForm"><input type=submit value="新規スレッド作成画面へ" name=submit style="background-color:#CCCCCC; border:1px #666666 solid;"></TD></TR></TABLE></form>
 <br><br>
 
