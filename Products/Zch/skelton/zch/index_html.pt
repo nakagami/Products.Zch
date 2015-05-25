@@ -37,7 +37,7 @@
 <span tal:repeat="item python: context.article_list(context.THREAD_NUMBER)">
 <TABLE cellpadding=3 width=95% tal:attributes="bgcolor here/THREAD_COLOR" align=center style="border:1px #666666 solid;"><TR><TD><DL>
 
-<a name="<dtml-var seq>"></a><DIV ALIGN="right"><a href ="#menu">■</a><a tal:attributes="href item/prev_link">▲</a><a tal:attributes="href item/next_link">▼</a></DIV>
+<a tal:attributes="name item.sequence_number"></a><DIV ALIGN="right"><a href ="#menu">■</a><a tal:attributes="href item/prev_link">▲</a><a tal:attributes="href item/next_link">▼</a></DIV>
 
 <B>【<dtml-var sequence-number>:<dtml-var expr="len(_['sequence-item'])">】<FONT size=5 color="#FF0000"><dtml-var title html_quote></FONT></B>
 <dt><dtml-var tnum> 名前：<font color=<dtml-var NAME_COLOR>><b><dtml-if "email!=''"><A href="mailto:<dtml-var email html_quote>"></dtml-if><dtml-var author><dtml-if "email!=''"></A></dtml-if>
