@@ -370,8 +370,6 @@ class ZchSite(ZCatalog.ZCatalog):
     def list_skelton(self):
         skelton = []
         for item in os.listdir(os.path.join(package_home(globals()), 'skelton')):
-            if item == 'CVS':
-                continue
             skelton.append(item)
         return skelton
 
