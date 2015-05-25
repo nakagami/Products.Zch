@@ -40,7 +40,7 @@
 <a tal:attributes="name item.sequence_number"></a><DIV ALIGN="right"><a href ="#menu">■</a><a tal:attributes="href item/prev_link">▲</a><a tal:attributes="href item/next_link">▼</a></DIV>
 
 <B>【<dtml-var sequence-number>:<dtml-var expr="len(_['sequence-item'])">】<FONT size=5 color="#FF0000"><dtml-var title html_quote></FONT></B>
-<dt><dtml-var tnum> 名前：<font color=<dtml-var NAME_COLOR>><b><dtml-if "email!=''"><A href="mailto:<dtml-var email html_quote>"></dtml-if><dtml-var author><dtml-if "email!=''"></A></dtml-if>
+<dt><span tal:content="context/tnum">1</span> 名前：<font tal:attributes="color here/NAME_COLOR">><b><dtml-if "email!=''"><A tal:attributes="href python: 'mailto:' + context.email"></dtml-if><dtml-var author><dtml-if "email!=''"></A></dtml-if>
 </b></font> 投稿日：<dtml-var date_posted><dtml-if DISP_IP> ID：<dtml-if "email!=''">???<dtml-else><dtml-var "ipcrypt(remote_addr,_['date_posted'])"></dtml-if></dtml-if>
 <dd><dtml-var cooked_body_2ch><br>
 
