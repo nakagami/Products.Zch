@@ -39,12 +39,15 @@
 
 <a tal:attributes="name item.sequence_number"></a><DIV ALIGN="right"><a href ="#menu">■</a><a tal:attributes="href item/prev_link">▲</a><a tal:attributes="href item/next_link">▼</a></DIV>
 
-<B>【<dtml-var sequence-number>:<dtml-var expr="len(_['sequence-item'])">】<FONT size=5 color="#FF0000"><dtml-var title html_quote></FONT></B>
-<dt><span tal:content="context/tnum">1</span> 名前：<font tal:attributes="color here/NAME_COLOR">><b><dtml-if "email!=''"><A tal:attributes="href python: 'mailto:' + context.email"></dtml-if><dtml-var author><dtml-if "email!=''"></A></dtml-if>
-</b></font> 投稿日：<dtml-var date_posted><dtml-if DISP_IP> ID：<dtml-if "email!=''">???<dtml-else><dtml-var "ipcrypt(remote_addr,_['date_posted'])"></dtml-if></dtml-if>
+<B>【<span tal:content="item.sequence_number"></span>:<span tal:content="python :len(item.ids)"】<FONT size=5 color="#FF0000"><span tal:content="context.title"></span></FONT></B>
+<dt><span tal:content="context/tnum">1</span> 名前：<font tal:attributes="color here/NAME_COLOR">><b>
+
+<A tal:attributes="href python: 'mailto:' + context.email"><span tal:replace="template/author" /></A>
+
+</b></font> 投稿日：<span tal:replace="template/date_posted" /><dtml-if DISP_IP> ID：<dtml-if "email!=''">???<dtml-else><dtml-var "ipcrypt(remote_addr,_['date_posted'])"></dtml-if></dtml-if>
 <dd><dtml-var cooked_body_2ch><br>
 
-<A HREF="&dtml-site_url;/<dtml-var file_path url_quote>">
+<A tal:attributes"href context.file_path">
 <IMG SRC="&dtml-site_url;/<dtml-var icon>" HEIGHT="16" WIDTH="16" BORDER="0" ALT="Click to download attachment"></A>
 <A HREF="&dtml-site_url;/<dtml-var file_path url_quote>">
 <dtml-var file_name></A>&nbsp;&nbsp;
@@ -55,7 +58,7 @@
 </dtml-in>
 <!-- thread res end -->
 
-<br><br><a href="&dtml-absolute_url;">全部読む</a>
+<br><br><a href=".">全部読む</a>
 <dtml-in expr="_.range(0,len(this()),100)">
 <a href=&dtml-absolute_url;?start=<dtml-var "_['sequence-item']+1">&size=100><dtml-var "_['sequence-item']+1">-<dtml-var "_['sequence-item'] + 100"></a>
 </dtml-in>
