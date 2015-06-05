@@ -44,13 +44,12 @@
 
 <A tal:attributes="href python: 'mailto:' + context.email"><span tal:replace="template/author" /></A>
 
-</b></font> 投稿日：<span tal:replace="template/date_posted" /><dtml-if DISP_IP> ID：<dtml-if "email!=''">???<dtml-else><dtml-var "ipcrypt(remote_addr,_['date_posted'])"></dtml-if></dtml-if>
-<dd><dtml-var cooked_body_2ch><br>
+</b></font> 投稿日：<span tal:replace="template/date_posted" />ID：<dtml-if "email!=''">???<dtml-else><dtml-var "ipcrypt(remote_addr,_['date_posted'])"></dtml-if>
+<dd><span tal:replace="context/cooked_body_2ch" /><br>
 
-<A tal:attributes"href context.file_path">
-<IMG SRC="&dtml-site_url;/<dtml-var icon>" HEIGHT="16" WIDTH="16" BORDER="0" ALT="Click to download attachment"></A>
-<A HREF="&dtml-site_url;/<dtml-var file_path url_quote>">
-<dtml-var file_name></A>&nbsp;&nbsp;
+<A tal:attributes="href context/file_path">
+<IMG tal:attributes="src context/icon" HEIGHT="16" WIDTH="16" BORDER="0" ALT="Click to download attachment"></A>
+<A tal:attribtes="href context/file_path"><span tal:replace="context/file_name" /></A>&nbsp;&nbsp;
 <dtml-var file_kbytes>KB (<dtml-var file_bytes> bytes)<BR>
 </dtml-in attachment>
 </dtml-if>
