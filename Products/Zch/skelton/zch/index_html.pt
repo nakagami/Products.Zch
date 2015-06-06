@@ -44,24 +44,21 @@
 
 <A tal:attributes="href python: 'mailto:' + context.email"><span tal:replace="template/author" /></A>
 
-</b></font> 投稿日：<span tal:replace="template/date_posted" />ID：<dtml-if "email!=''">???<dtml-else><dtml-var "ipcrypt(remote_addr,_['date_posted'])"></dtml-if>
+</b></font> 投稿日：<span tal:replace="template/date_posted" />ID：<spam tal:replace="python: ipcrypt(context.remote_addr,context.date_posted) if context.email else '???' />
 <dd><span tal:replace="context/cooked_body_2ch" /><br>
 
 <A tal:attributes="href context/file_path">
 <IMG tal:attributes="src context/icon" HEIGHT="16" WIDTH="16" BORDER="0" ALT="Click to download attachment"></A>
 <A tal:attribtes="href context/file_path"><span tal:replace="context/file_name" /></A>&nbsp;&nbsp;
-<dtml-var file_kbytes>KB (<dtml-var file_bytes> bytes)<BR>
-</dtml-in attachment>
-</dtml-if>
+<span replate="context/file_kbytes" />KB (<span replace="context/file_bytes" />)<BR>
 <br>
-</dtml-in>
 <!-- thread res end -->
 
 <br><br><a href=".">全部読む</a>
-<dtml-in expr="_.range(0,len(this()),100)">
-<a href=&dtml-absolute_url;?start=<dtml-var "_['sequence-item']+1">&size=100><dtml-var "_['sequence-item']+1">-<dtml-var "_['sequence-item'] + 100"></a>
-</dtml-in>
-<a href="&dtml-absolute_url;?size=50">最新50</a>
+<span tal:repeat="item python:range(0,len(this()),100)">
+<a href=?start=<dtml-var "_['sequence-item']+1">&size=100><dtml-var "_['sequence-item']+1">-<dtml-var "_['sequence-item'] + 100"></a>
+</span>
+<a href=".?size=50">最新50</a>
 <a href="#top">板のトップへ</a> <a href="?">リロード</a>
 </b></DL></td></tr></table><br>
 
