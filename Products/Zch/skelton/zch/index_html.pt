@@ -55,8 +55,9 @@
 <!-- thread res end -->
 
 <br><br><a href=".">全部読む</a>
-<span tal:repeat="item python:range(0,len(this()),100)">
-<a href=?start=<dtml-var "_['sequence-item']+1">&size=100><dtml-var "_['sequence-item']+1">-<dtml-var "_['sequence-item'] + 100"></a>
+<span tal:repeat="num python:range(0,len(this()),100)">
+<a tal:attributes="href python:'.?start='+str(num+1)+'&size=100><span tal:replace="python: num+1" />-<span tal:replace="python: num+100" /></a>
+
 </span>
 <a href=".?size=50">最新50</a>
 <a href="#top">板のトップへ</a> <a href="?">リロード</a>
