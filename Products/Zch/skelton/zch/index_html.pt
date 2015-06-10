@@ -26,7 +26,7 @@
 <tr>
 <td><font size=2>
     <span tal:repeat="item python: context.article_list(context.MENU_THREAD_NUMBER)">
-        <a href="#" target="body" tal:content="item/item_name"></a>
+        <a href="#" target="body" tal:content="item/sequence_number"><span tal:replace="item/title" /></a>
     </span>
 
     <div align="right"><a href="subback_html"><b>スレッド一覧はこちら</b></a></div>
@@ -40,20 +40,15 @@
 <a tal:attributes="name item/sequence_number"></a><DIV ALIGN="right"><a href ="#menu">■</a><a tal:attributes="href item/prev_link">▲</a><a tal:attributes="href item/next_link">▼</a></DIV>
 
 <B>【<span tal:replace="item/sequence_number" />:<span tal:replace="python: len(item.ids)" />】<FONT size=5 color="#FF0000"><span tal:content="context/title"></span></FONT></B>
-<dt><span tal:content="context/tnum">1</span> 名前：<font tal:attributes="color here/NAME_COLOR">
-<b><A tal:attributes="href python: 'mailto:' + context.email"><span tal:replace="template/author" /></A></b></font>
-投稿日：<span tal:replace="template/date_posted" />ID：<spam tal:replace="python: ipcrypt(context.remote_addr,context.date_posted) if context.email else '???'" />
-<dd><span tal:replace="context/cooked_body_2ch" /><br>
+<dt><span tal:content="item/sn_title">1</span> 名前：<font tal:attributes="color here/NAME_COLOR">
+<b><A tal:attributes="href python: 'mailto:' + item.email"><span tal:replace="item/author" /></A></b></font>
+投稿日：<span tal:replace="item/date_posted" />ID：<spam tal:replace="python: ipcrypt(context.remote_addr,context.date_posted) if item.email else '???'" />
+<dd><span tal:replace="item/cooked_body_2ch" /><br>
 
-<A tal:attributes="href context/file_path">
-<IMG tal:attributes="src context/icon" HEIGHT="16" WIDTH="16" BORDER="0" ALT="Click to download attachment"></A>
-<A tal:attributes="href context/file_path"><span tal:replace="context/file_name" /></A>&nbsp;&nbsp;
-<span replate="context/file_kbytes" />KB (<span replace="context/file_bytes" />)<BR>
-<br>
 <!-- thread res end -->
 
 <br><br><a href=".">全部読む</a>
-<span tal:repeat="num python:range(0,len(this()),100)">
+<span tal:repeat="num python:range(0,len(context.ids),100)">
 <a tal:attributes="href python: '.?start='+str(num+1)+'&size=100'"><span tal:replace="python: num+1" />-<span tal:replace="python: num+100" /></a>
 
 </span>
