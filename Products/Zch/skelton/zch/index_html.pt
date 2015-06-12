@@ -48,25 +48,25 @@
 <B>【<span tal:replace="item/sequence_number" />:<span tal:replace="python: len(item.ids)" />】<FONT size=5 color="#FF0000"><span tal:content="context/title"></span></FONT></B>
 <dt><span tal:content="python: str(item.sequence_number) + ':'">1</span> 名前：<font tal:attributes="color here/NAME_COLOR">
 <b><A tal:attributes="href python: 'mailto:' + item.email"><span tal:replace="item/author" /></A></b></font>
-投稿日：<span tal:replace="item/date_posted" />ID：<spam tal:replace="python: context.ipcrypt(context.remote_addr,context.date_posted) if item.email else '???'" />
+投稿日：<span tal:replace="item/date_posted" />ID：<spam tal:replace="python: context.ipcrypt(request.REMOTE_ADDR,context.date_posted) if item.email else '???'" />
 <dd><span tal:replace="item/cooked_body_2ch" /><br>
 
 <!-- thread res start -->
-<span tal:repeat="item python: context.comment_list_size(0, context.CONTENTS_NUMBER)">
-<dt><span tal:replace="item/tnum" /> 名前：<font tal:attributes="color context/NAME_COLOR"><b>
-<A tal:attributes="href python: 'mailto:' + item.email"><span tal:replace="item/author" /></A>
+<span tal:repeat="comment python: item.comment_list_size(0, context.CONTENTS_NUMBER)">
+<span tal:replace="comment/tnum" /> 名前：<font tal:attributes="color context/NAME_COLOR"><b>
+<A tal:attributes="href python: 'mailto:' + comment.email"><span tal:replace="comment/author" /></A>
 
-</b></font> 投稿日：<span tal:replace="context/date_posted" />
-<span tal:replace="python: context.ipcrypt(request.remote_addr,item.date_posted)" />
+</b></font> 投稿日：<span tal:replace="comment/date_posted" />
+<span tal:replace="python: context.ipcrypt(request.REMOTE_ADDR,comment.date_posted)" />
 
-<dd><span tal:replace="item/cooked_body_2ch" /><br>
+<span tal:replace="comment/cooked_body_2ch" /><br>
 <br>
 </span>
 
 <dt><dd>
 <FORM tal:attributes="actoin item/absolute_url" ENCTYPE="multipart/form-data" METHOD="POST">
-<INPUT TYPE="hidden" NAME="title" tal:attributes="value context/title">
-<INPUT TYPE="hidden" NAME="FROMURL" tal:attributes="value context/URL">
+<INPUT TYPE="hidden" NAME="title" tal:attributes="value item/title">
+<INPUT TYPE="hidden" NAME="FROMURL" tal:attributes="value request/URL">
 <input type="submit" value="書き込む" name="addPosting:method" style="background-color:#CCCCCC; border:1px #666666 solid;">
 名前：<INPUT TYPE=text NAME="author" tal:attributes="value python: request.cookies.get('_suggest_author', '')" SIZE=19  style="background-color:#ffffff; border:1px #666666 solid;">
 E-mail<font size="1">（省略可）</font>：<INPUT TYPE=text NAME="email" tal:attributes="value python: request.cookies.get('_suggest_email', '')" SIZE=19  style="background-color:#ffffff; border:1px #666666 solid;"><br>
