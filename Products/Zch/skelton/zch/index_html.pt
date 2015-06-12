@@ -51,9 +51,9 @@
 投稿日：<span tal:replace="item/date_posted" />ID：<spam tal:replace="python: ipcrypt(context.remote_addr,context.date_posted) if item.email else '???'" />
 <dd><span tal:replace="item/cooked_body_2ch" /><br>
 
-<!-- thread res main -->
+<!-- thread res start -->
 <span tal:repeat="item python: context.comment_list_size(0, context.CONTENTS_NUMBER)">
-<dt><span tal:replace="item/tnum" /> 名前：<font tal:attributes="color context/NAME_COLOR><b>
+<dt><span tal:replace="item/tnum" /> 名前：<font tal:attributes="color context/NAME_COLOR"><b>
 <A tal:attributes="href python: 'mailto:' + context/email"><span tal:replace="item/author" /></A>
 
 </b></font> 投稿日：<span tal:replace="context/date_posted" />
@@ -83,8 +83,6 @@ E-mail<font size="1">（省略可）</font>：<INPUT TYPE=text NAME="email" tal:
 <a href=".?size=50">最新50</a>
 <a href="#top">板のトップへ</a> <a href="?">リロード</a>
 </DL></td></tr></table><br>
-
-</span>
 
 <!-- thread main end -->
 
