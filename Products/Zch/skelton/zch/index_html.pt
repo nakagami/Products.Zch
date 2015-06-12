@@ -83,7 +83,7 @@ E-mail<font size="1">（省略可）</font>：<INPUT TYPE=text NAME="email" tal:
 <a href=".?size=50">最新50</a>
 <a href="#top">板のトップへ</a> <a href="?">リロード</a>
 </DL></td></tr></table><br>
-
+</span>
 <!-- thread main end -->
 
 <table cellpadding=3 width=95% tal:attributes="bgcolor here/MENU_COLOR" align=center style="border:1px #666666 solid;">
