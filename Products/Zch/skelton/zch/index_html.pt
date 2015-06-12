@@ -23,12 +23,11 @@
 <!-- thread menu -->
 <a name="menu"></a>
 <table cellpadding=3 width=95% tal:attributes="bgcolor here/MENU_COLOR" align=center style="border:1px #666666 solid;">
-<tr>
-<td><font size=2>
-    <span tal:repeat="item python: context.article_list(context.MENU_THREAD_NUMBER)">
-        <a href="#" target="body" tal:content="item/sequence_number"><span tal:replace="item/title" /></a>
-    </span>
-
+<tr><td><font size=2>
+    <div tal:repeat="item python: context.article_list(context.MENU_THREAD_NUMBER)">
+    <a tal:condition="python: item.sequence_number > context.THREAD_NUMBER" href="." target="body" ><span tal:content="item/sequence_number" />:<span tal:content="item/title" />(<span tal:content="python: len(item.ids)" />)</a>
+    <a tal:condition="python: item.sequence_number <= context.THREAD_NUMBER" tal:attributes="href item/absolute_url" target="body" ><span tal:replace="item/sequence_number" />:</a> <a tal:condition="python: item.sequence_number <= context.THREAD_NUMBER" tal:attributes="href python: '#'+ str(item.sequence_number)"><span tal:replace="item/title" />(<span tal:replace="python: len(item.ids)+1" />)</a>
+    </div>
     <div align="right"><a href="subback_html"><b>スレッド一覧はこちら</b></a></div>
 </font></td></tr></table><br>
 <!-- thread menu end -->
