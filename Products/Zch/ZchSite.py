@@ -275,10 +275,6 @@ class ZchSite(ZCatalog.ZCatalog):
             items = items[:size]
         for i in range(len(items)):
             items[i].sequence_number = i + 1
-            items[i].sn_title = str(i+1) + ':'
-            items[i].title_count = items[i].title
-            items[i].prev_link = '#'+str(i)
-            items[i].next_link = '#'+str(i+2)
         return items
 
     security.declareProtected(ManageZch, 'postingValues')

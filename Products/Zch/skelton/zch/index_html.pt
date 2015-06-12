@@ -43,10 +43,10 @@
 <span tal:repeat="item python: context.article_list(context.THREAD_NUMBER)">
 <TABLE cellpadding=3 width=95% tal:attributes="bgcolor here/THREAD_COLOR" align=center style="border:1px #666666 solid;"><TR><TD><DL>
 
-<a tal:attributes="name item/sequence_number"></a><DIV ALIGN="right"><a href ="#menu">■</a><a tal:attributes="href item/prev_link">▲</a><a tal:attributes="href item/next_link">▼</a></DIV>
+<a tal:attributes="name item/sequence_number"></a><DIV ALIGN="right"><a href ="#menu">■</a><a tal:attributes="href python: str(item.sequence_number-1)">▲</a><a tal:attributes="href python: str(item.sequence_number+1)">▼</a></DIV>
 
 <B>【<span tal:replace="item/sequence_number" />:<span tal:replace="python: len(item.ids)" />】<FONT size=5 color="#FF0000"><span tal:content="context/title"></span></FONT></B>
-<dt><span tal:content="item/sn_title">1</span> 名前：<font tal:attributes="color here/NAME_COLOR">
+<dt><span tal:content="python: str(item.sequence_number) + ':'">1</span> 名前：<font tal:attributes="color here/NAME_COLOR">
 <b><A tal:attributes="href python: 'mailto:' + item.email"><span tal:replace="item/author" /></A></b></font>
 投稿日：<span tal:replace="item/date_posted" />ID：<spam tal:replace="python: ipcrypt(context.remote_addr,context.date_posted) if item.email else '???'" />
 <dd><span tal:replace="item/cooked_body_2ch" /><br>
