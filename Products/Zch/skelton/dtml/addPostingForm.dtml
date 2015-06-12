@@ -1,0 +1,59 @@
+<dtml-comment >  
+<!-- version : $Revision: 1.2 $  
+     author  : KANDA Hiroshi   
+       
+  
+     copyright (c) 2002 by KANDA Hiroshi  
+  
+     see License.txt for restrictions on distribution, use   
+     and modifications.  
+  
+  -->  
+</dtml-comment >  
+<dtml-var site_header>  
+
+<!-- top menu -->  
+<div align=center><IMG  src="<dtml-var site_url>/<dtml-var TITLE_PICTURE url_quote>" border=0 alt="Welcome to <dtml-var SITE_TITLE>"></div>
+
+<!-- new Thread -->
+<FORM ACTION="<dtml-var URL0>" ENCTYPE="multipart/form-data" METHOD="POST">
+<table cellpadding=3 width=95% bgcolor=<dtml-var MAKETHREAD_COLOR> align=center style="border-collapse:cllapse;border:1px #666666 solid;"><tr><td align="center">
+<TABLE BORDER="0" CELLPADDING="1" WIDTH="100%">
+	<TR><TD nowrap COLSPAN="3">
+		<font +1><b>Zope＠Zch掲示板</b></font><br>
+	</TD>
+
+	</TR>
+	<TR><TD COLSPAN="4">
+<p>
+<b>質問する前に必ず読んでください。</b><BR>
+▽荒らしは基本的に構って君なので、完全無視＆放置して下さい。<BR> 
+　 罵倒レス等も喜ばせるだけ。無視出来ないあなたも厨房です。<BR>
+</p>
+	<br></TD></TR>
+<TR>
+<TD nowrap ALIGN="right">
+<INPUT TYPE="hidden" NAME="encoding" VALUE="Plain">
+<INPUT TYPE="hidden" NAME="FROMURL" VALUE="<dtml-var URL1>/index_html">
+タイトル：</TD><TD><input type="text" name="title" size="40" style="border:1px #666666 solid;"></TD>
+<TD><input type="submit" value="新規スレッド作成" name="addPosting:method" style="background-color:#CCCCCC; border:1px #666666 solid;"></TD>
+</TR><TR>
+<TD nowrap ALIGN="right">名前：</TD>
+<TD nowrap COLSPAN="2">
+		<INPUT TYPE=text NAME=author VALUE="<dtml-var "REQUEST.cookies.get('_suggest_author')" null="">" SIZE=19 style="border:1px #666666 solid;"> E-mail<font size="1">（省略可）</font>：<INPUT TYPE=text NAME=email VALUE="<dtml-var "REQUEST.cookies.get('_suggest_email')" null="">" SIZE=19 style="border:1px #666666 solid;">
+</TD>
+</TR><TR>
+<TD nowrap ALIGN="right" VALIGN="top">内容：</TD>
+<TD COLSPAN="3">
+<textarea rows=5 cols=60 wrap=OFF name="body" style="border:1px #666666 solid;"></textarea>
+</TD>
+</TR><dtml-if fileattache><TR>
+<TD nowrap ALIGN="right">ファイル：</TD>
+<TD nowrap COLSPAN="2">
+<INPUT TYPE="FILE" NAME="file" SIZE="50" VALUE="" style="border:1px #666666 solid;">
+</TD>
+</TR></dtml-if fileattache></TABLE>
+</form></td></tr></table><br>
+
+</BODY>
+</HTML>
