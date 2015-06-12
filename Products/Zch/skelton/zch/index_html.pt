@@ -76,10 +76,11 @@ E-mail<font size="1">（省略可）</font>：<INPUT TYPE=text NAME="email" tal:
 <!-- thread res end -->
 
 <br><br><a tal:attributes="href context/absolute_url">全部読む</a>
+
 <span tal:repeat="num python:range(0,len(context.ids),100)">
 <a tal:attributes="href python: '.?start='+str(num+1)+'&size=100'"><span tal:replace="python: num+1" />-<span tal:replace="python: num+100" /></a>
-
 </span>
+
 <a href=".?size=50">最新50</a>
 <a href="#top">板のトップへ</a> <a href="?">リロード</a>
 </DL></td></tr></table><br>
