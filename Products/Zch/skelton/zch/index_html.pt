@@ -68,8 +68,8 @@
 <INPUT TYPE="hidden" NAME="title" tal:attributes="value context/title">
 <INPUT TYPE="hidden" NAME="FROMURL" tal:attributes="value context/URL">
 <input type="submit" value="書き込む" name="addPosting:method" style="background-color:#CCCCCC; border:1px #666666 solid;">
-名前：<INPUT TYPE=text NAME="author" tal:attributes="value request.cookies.get('_suggest_author', '')" SIZE=19  style="background-color:#ffffff; border:1px #666666 solid;">
-E-mail<font size="1">（省略可）</font>：<INPUT TYPE=text NAME="email" tal:attributes="value request.cookies.get('_suggest_email', '')" SIZE=19  style="background-color:#ffffff; border:1px #666666 solid;"><br>
+名前：<INPUT TYPE=text NAME="author" tal:attributes="value python: request.cookies.get('_suggest_author', '')" SIZE=19  style="background-color:#ffffff; border:1px #666666 solid;">
+E-mail<font size="1">（省略可）</font>：<INPUT TYPE=text NAME="email" tal:attributes="value python: request.cookies.get('_suggest_email', '')" SIZE=19  style="background-color:#ffffff; border:1px #666666 solid;"><br>
 <textarea rows=5 cols=60 wrap=OFF name="body"  style="background-color:#ffffff; border:1px #666666 solid;">
 </textarea>
 </FORM>
